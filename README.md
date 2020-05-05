@@ -7,6 +7,7 @@
 4. [Picker](#picker)
 5. [Button](#button)
 6. [Alert](#alert)
+7. [SwiftUI use struct](#swiftui-use-struct)
 
 ## NavigationBar
 ```swift
@@ -152,7 +153,7 @@ struct ContentView: View {
 
 [Back to top](#Table-of-Contents)
 
-### Picker
+## Picker
 Normal picker
 ```swift
 struct ContentView: View {
@@ -258,7 +259,7 @@ struct ContentView: View {
 
 [Back to top](#Table-of-Contents)
 
-### Button
+## Button
 ```swift
 struct ContentView: View {
     
@@ -276,7 +277,7 @@ struct ContentView: View {
 ```
 [Back to top](#Table-of-Contents)
 
-### Alert
+## Alert
 
 ```swift
 struct ContentView: View {
@@ -292,6 +293,41 @@ struct ContentView: View {
                 print("alert button action")
                 })
         }
+    }
+}
+```
+
+[Back to top](#Table-of-Contents)
+
+## SwiftUI use Struct
+
+UIKit là class chứa khoảng 200 properties
+SwiftUI là struct và hoàn toàn không có properties nào.
+Ví dụ:
+```swift
+struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
+    var body: some View {
+        Text("Hello World")
+    }
+}
+```
+View trên không có property nào để set background color.
+Bắt buộc phải dùng component khác với frame full màn hình và set color cho component đó.
+
+VD như trường hợp bên dưới là set color cho ZStack
+```swift
+struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
+    var body: some View {
+        ZStack{
+            Color.orange
+            Text("Hello World")
+        }.edgesIgnoringSafeArea(.all)
     }
 }
 ```
