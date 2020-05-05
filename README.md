@@ -332,4 +332,60 @@ struct ContentView: View {
 }
 ```
 
+SwiftUI render theo thứ tự từng dòng code
+
+```swift
+struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
+    var body: some View {
+        Button("Button") {
+            
+        }
+        .background(Color.red)
+        .frame(width:200, height: 200)
+    }
+}
+```
+
+![](imgs/modifier-order/modifierOrder1.png)
+
+```swift
+struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
+    var body: some View {
+        Button("Button") {
+            
+        }
+        .frame(width:200, height: 200)
+        .background(Color.red)
+    }
+}
+```
+
+![](imgs/modifier-order/modifierOrder2.png)
+
+```swift
+struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
+    var body: some View {
+        Text("modifier order")
+            .padding()
+            .background(Color.red)
+            .padding()
+            .background(Color.orange)
+            .padding()
+            .background(Color.blue)
+    }
+}
+```
+
+![](imgs/modifier-order/modifierOrder3.png)
+
+
 [Back to top](#Table-of-Contents)
