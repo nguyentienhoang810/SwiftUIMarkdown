@@ -4,6 +4,7 @@
 1. [Navigation Bar](#NavigationBar)
 2. [State](#State)
 3. [Form and Section](#form-and-section)
+4. [Picker](#picker)
 
 ## NavigationBar
 ```swift
@@ -146,5 +147,46 @@ struct ContentView: View {
 }
 ```
 ![](imgs/form-section/form-foreach.png)
+
+[Back to top](#Table-of-Contents)
+
+### Picker
+Normal picker
+```swift
+struct ContentView: View {
+    @State private var numberOfPeople = 5
+    
+    var body: some View {
+        Picker("Number of people", selection: $numberOfPeople) {
+            ForEach(0 ..< 10) {
+                Text("\($0) people")
+            }
+        }
+    }
+}
+```
+![](imgs/picker/normal-picker.png)
+
+Đặt picker trong form → phải đặt form trong navigation view
+```swift
+struct ContentView: View {
+    @State private var numberOfPeople = 5
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section {
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(2 ..< 100) {
+                            Text("\($0) people")
+                        }
+                    }
+                }
+            }.navigationBarTitle("Picker")
+        }
+    }
+}
+```
+![](imgs/picker/form-picker.png)
 
 [Back to top](#Table-of-Contents)
