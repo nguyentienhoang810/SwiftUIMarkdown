@@ -9,6 +9,7 @@
 6. [Alert](#alert)
 7. [SwiftUI use struct](#swiftui-use-struct)
 8. [Modifier order](#Modifier-Order)
+9. [Views as properties](#Views-as-properties)
 
 ## NavigationBar
 ```swift
@@ -390,5 +391,25 @@ struct ContentView: View {
 
 ![](imgs/modifier-order/modifierOrder3.png)
 
+[Back to top](#Table-of-Contents)
+
+## Views as properties
+
+```swift
+struct ContentView: View {
+    
+    let view1 = Text("Text from view 1")
+    let view2 = Text("Text from view 2")
+    
+    var body: some View {
+        VStack{
+            view1
+                .foregroundColor(.blue)
+            view2
+                .foregroundColor(.red)
+        }
+    }
+}
+```
 
 [Back to top](#Table-of-Contents)
