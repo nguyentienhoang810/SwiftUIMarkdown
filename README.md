@@ -10,7 +10,7 @@ struct ContentView: View {
     }
 }
 ```
-![nonav](imgs/nav/no-nav.png)
+![](imgs/nav/no-nav.png)
 
 ```swift
 struct ContentView: View {
@@ -23,7 +23,7 @@ struct ContentView: View {
     }
 }
 ```
-![nonav](imgs/nav/nav.png)
+![](imgs/nav/nav.png)
 
 ```swift
 struct ContentView: View {
@@ -36,7 +36,7 @@ struct ContentView: View {
     }
 }
 ```
-![nonav](imgs/nav/nav-with-title.png)
+![](imgs/nav/nav-with-title.png)
 
 ```swift
 struct ContentView: View {
@@ -49,4 +49,36 @@ struct ContentView: View {
     }
 }
 ```
-![nonav](imgs/nav/nav-inline-title.png)
+![](imgs/nav/nav-inline-title.png)
+
+## State
+State make variable become mutable
+
+### Immutable
+```swift
+struct ContentView: View {
+    var body: some View {
+        var name = ""
+        Form {
+            TextField("Enter your name", text: name)
+            Text("Hello World")
+        }
+    }
+}
+```
+![](imgs/state/no-state.png)
+
+### Mutable - two way binding
+```swift
+struct ContentView: View {
+    @State private var name = ""
+
+    var body: some View {
+        Form {
+            TextField("Enter your name", text: $name)
+            Text("Hello World \(name)")
+        }
+    }
+}
+```
+![](imgs/state/state-binding.png)
