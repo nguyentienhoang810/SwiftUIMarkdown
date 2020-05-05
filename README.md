@@ -288,7 +288,9 @@ struct ContentView: View {
             self.showingAlert = true
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Hello SwiftUI!"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Hello SwiftUI!"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")) {
+                print("alert button action")
+                })
         }
     }
 }
