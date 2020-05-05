@@ -6,6 +6,7 @@
 3. [Form and Section](#form-and-section)
 4. [Picker](#picker)
 5. [Button](#button)
+6. [Alert](#alert)
 
 ## NavigationBar
 ```swift
@@ -273,4 +274,24 @@ struct ContentView: View {
     }
 }
 ```
+[Back to top](#Table-of-Contents)
+
+### Alert
+
+```swift
+struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
+    var body: some View {
+        Button("Show Alert") {
+            self.showingAlert = true
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Hello SwiftUI!"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")))
+        }
+    }
+}
+```
+
 [Back to top](#Table-of-Contents)
