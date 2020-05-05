@@ -8,6 +8,7 @@
 5. [Button](#button)
 6. [Alert](#alert)
 7. [SwiftUI use struct](#swiftui-use-struct)
+8. [Modifier order](#Modifier-Order)
 
 ## NavigationBar
 ```swift
@@ -331,6 +332,8 @@ struct ContentView: View {
     }
 }
 ```
+
+## Modifier Order
 
 SwiftUI render theo thứ tự từng dòng code
 
