@@ -214,4 +214,44 @@ struct ContentView: View {
 
 ![](imgs/picker/SegmentedPickerStyle.png)
 
+Conclusion
+get binding value from picker
+```swift
+struct ContentView: View {
+    private let percentages = ["10%", "20%", "30%", "40%", "50%"]
+    @State private var percentIndex = 2
+    @State private var peopleIndex = 2
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                
+                Section{
+                    Picker("Number of people", selection: $peopleIndex) {
+                        ForEach(0..<10, id: \.self) {
+                            Text("\($0) people")
+                        }
+                    }
+                }
+                
+                Section(header: Text("choose one")) {
+                    Picker("Segmented Picker Style", selection: $percentIndex) {
+                        ForEach(0..<percentages.count, id: \.self) {
+                            Text("\(self.percentages[$0])")
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                }
+                
+                Section{
+                    Text("\(peopleIndex) - \(percentages[percentIndex])")
+                }
+                
+            }.navigationBarTitle("Picker")
+        }
+    }
+}
+```
+
+![](imgs/picker/conclusion.png)
+
 [Back to top](#Table-of-Contents)
