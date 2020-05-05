@@ -56,6 +56,8 @@ struct ContentView: View {
 ```
 ![](imgs/nav/nav-inline-title.png)
 
+[Back to top](#Table-of-Contents)
+
 ## State
 State make variable become mutable
 
@@ -87,6 +89,8 @@ struct ContentView: View {
 }
 ```
 ![](imgs/state/state-binding.png)
+
+[Back to top](#Table-of-Contents)
 
 ## Form and Section
 Chỉ chấp nhận 10 rows trong 1 Form hoặc section
@@ -142,3 +146,5 @@ struct ContentView: View {
 }
 ```
 ![](imgs/form-section/form-foreach.png)
+
+[Back to top](#Table-of-Contents)
