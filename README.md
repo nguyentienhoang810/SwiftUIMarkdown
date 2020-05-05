@@ -1,6 +1,11 @@
 # SwiftUI memo
 
-## Adding a navigation bar
+#### Table of Contents
+1. [Navigation Bar](#NavigationBar)
+2. [State](#State)
+3. [Form and Section](#form-and-section)
+
+## NavigationBar
 ```swift
 struct ContentView: View {
     var body: some View {
@@ -83,7 +88,7 @@ struct ContentView: View {
 ```
 ![](imgs/state/state-binding.png)
 
-## Form - Section
+## Form and Section
 Chỉ chấp nhận 10 rows trong 1 Form hoặc section
 ```swift
 struct ContentView: View {
