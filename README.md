@@ -82,3 +82,58 @@ struct ContentView: View {
 }
 ```
 ![](imgs/state/state-binding.png)
+
+## Form - Section
+Chỉ chấp nhận 10 rows trong 1 Form hoặc section
+```swift
+struct ContentView: View {
+    var body: some View {
+        NavigationView{
+            Form {
+                Section{
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                }
+                Section{
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                }
+            }.navigationBarTitle("ForEach")
+        }
+    }
+}
+```
+![](imgs/form-section/form-section.png)
+
+Nếu muốn nhiều hơn 10 row trong 1 form thì sử dụng ForEach
+```swift
+struct ContentView: View {
+    var body: some View {
+        NavigationView{
+            Form {
+                ForEach(0 ..< 20) {
+                    Text("Row \($0)")
+                }
+            }
+            .navigationBarTitle("ForEach")
+        }
+    }
+}
+```
+![](imgs/form-section/form-foreach.png)
