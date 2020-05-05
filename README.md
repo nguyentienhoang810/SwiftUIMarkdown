@@ -5,6 +5,7 @@
 2. [State](#State)
 3. [Form and Section](#form-and-section)
 4. [Picker](#picker)
+5. [Button](#button)
 
 ## NavigationBar
 ```swift
@@ -254,4 +255,22 @@ struct ContentView: View {
 
 ![](imgs/picker/conclusion.png)
 
+[Back to top](#Table-of-Contents)
+
+### Button
+```swift
+struct ContentView: View {
+    
+    var body: some View {
+        Button(action: {
+            print("button action")
+        }) {
+            HStack(spacing: 40){
+                Image(systemName: "pencil")
+                Text("Press")
+            }
+        }
+    }
+}
+```
 [Back to top](#Table-of-Contents)
