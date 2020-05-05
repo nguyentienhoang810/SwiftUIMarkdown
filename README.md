@@ -25,6 +25,7 @@ struct ContentView: View {
 ```
 ![nonav](imgs/nav/nav.png)
 
+```swift
 struct ContentView: View {
     var body: some View {
         NavigationView{
@@ -34,6 +35,7 @@ struct ContentView: View {
         }
     }
 }
+```
 ![nonav](imgs/nav/nav-with-title.png)
 
 ```swift
