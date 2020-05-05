@@ -10,6 +10,7 @@
 7. [SwiftUI use struct](#swiftui-use-struct)
 8. [Modifier order](#Modifier-Order)
 9. [Views as properties](#Views-as-properties)
+10. [View composition](#View-composition)
 
 ## NavigationBar
 ```swift
@@ -408,6 +409,67 @@ struct ContentView: View {
             view2
                 .foregroundColor(.red)
         }
+    }
+}
+```
+
+[Back to top](#Table-of-Contents)
+
+## View composition
+
+```swift
+struct ContentView: View {
+    
+    let view1 = Text("Text from view 1")
+    let view2 = Text("Text from view 2")
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            CapsuleText(text: "First")
+            CapsuleText(text: "Second")
+        }
+    }
+}
+
+struct CapsuleText: View {
+    var text: String
+
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .clipShape(Capsule())
+    }
+}
+```
+
+```swift
+struct ContentView: View {
+    
+    let view1 = Text("Text from view 1")
+    let view2 = Text("Text from view 2")
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            CapsuleText(text: "First")
+                .foregroundColor(.yellow)
+            CapsuleText(text: "Second")
+                .foregroundColor(.red)
+        }
+    }
+}
+
+struct CapsuleText: View {
+    var text: String
+
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+            .background(Color.blue)
+            .clipShape(Capsule())
     }
 }
 ```
