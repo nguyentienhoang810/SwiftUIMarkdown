@@ -189,4 +189,29 @@ struct ContentView: View {
 ```
 ![](imgs/picker/form-picker.png)
 
+Segmented Picker Style & section header
+
+```swift
+struct ContentView: View {
+    @State private var percentages = ["10%", "20%", "30%", "40%", "50%"]
+    @State private var firstIndex = 2
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section(header: Text("choose one")) {
+                    Picker("Segmented Picker Style", selection: $firstIndex) {
+                        ForEach(0..<percentages.count) {
+                            Text("\(self.percentages[$0])")
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                }
+            }.navigationBarTitle("Picker")
+        }
+    }
+}
+```
+
+![](imgs/picker/SegmentedPickerStyle.png)
+
 [Back to top](#Table-of-Contents)
