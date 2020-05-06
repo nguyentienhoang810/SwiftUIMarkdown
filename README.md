@@ -13,6 +13,7 @@
 10. [View composition](#View-composition)
 11. [Custom Modifier](./CustomModifier/README.md)
 12. [Custom ContentView](./CustomContentView/README.md)
+13. [Stepper](./Stepper/README.md)
 
 ## NavigationBar
 ```swift
