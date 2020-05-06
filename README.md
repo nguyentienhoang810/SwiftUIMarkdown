@@ -12,6 +12,7 @@
 9. [Views as properties](#Views-as-properties)
 10. [View composition](#View-composition)
 11. [Custom Modifier](./CustomModifier/README.md)
+12. [Custom ContentView](./CustomContentView/README.md)
 
 ## NavigationBar
 ```swift
